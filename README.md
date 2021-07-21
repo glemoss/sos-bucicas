@@ -6,9 +6,9 @@ Projeto da disciplina INE5646
   
 ## Desenvolvimento
   SOS-bucicas será desenvolvido a princípio com:
-    *node.
-    *react.
+    -node.
+    -react.
   
 ### Cadastros: 
-  *Para as pessoas que pretendem ajudar. 
-  *Adotar outro para os animais que serão ajudados.
+  -Para as pessoas que pretendem ajudar. 
+  -Adotar outro para os animais que serão ajudados.
