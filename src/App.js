@@ -1,8 +1,13 @@
 import './App.css';
 
+import { Hero, Navbar } from './components'
+
 function App() {
   return (
-    <div>Hello</div>
+    <main>
+      <Navbar />
+      <Hero />
+    </main>
   );
 }
 
