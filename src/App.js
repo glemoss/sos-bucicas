@@ -1,14 +1,21 @@
 import './App.css';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
-import { Hero, Navbar } from './components'
+import { Home } from './pages'
 
-function App() {
+export default function App() {
   return (
-    <main>
-      <Navbar />
-      <Hero />
-    </main>
+    <Router>
+      <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+    </Router>
   );
 }
 
-export default App;
