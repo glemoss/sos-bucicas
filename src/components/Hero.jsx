@@ -13,7 +13,7 @@ const Hero = () => {
       }}
     >
 
-       <h1 class="text-white font-bold text-5xl">SOS Bucica</h1>
+       <h1 className="text-white font-bold text-5xl">SOS Bucica</h1>
     </div>
   );
 };
