@@ -5,9 +5,13 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
-      <div className="flex  justify-between">
-        <About />
-        <Gallery />
+      <div className="container mx-auto grid sm:grid-cols-8 grid-flow-row">
+        <div className="sm:col-span-6 p-4">
+          <About />
+        </div>
+        <div className="sm:col-span-2">
+          <Gallery />
+        </div>
       </div>
     </main>
   )

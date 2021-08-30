@@ -1,11 +1,14 @@
 
 export default function About() {
   return (
-    <div className="flex flex-col">
-      <h3 className="text-xl font-bold">Conheça a ONG</h3>
+    <div className="sm:p-4">
+      <div className="mb-4">
+        <h3 className="text-3xl font-bold">Conheça a ONG</h3>
+      </div>
       <div
+        className="max-h-96"
         style={{
-          height:"300px",
+          height:"400px",
           backgroundImage:
             "url(https://images.unsplash.com/photo-1601758177266-bc599de87707?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80)",
           backgroundRepeat: "no-repeat",
