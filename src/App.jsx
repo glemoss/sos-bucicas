@@ -5,16 +5,20 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Home } from './pages'
+import { Contact, Home } from './pages'
+
 
 export default function App() {
   return (
     <Router>
       <Switch>
-          <Route path="/">
+          <Route path="/" exact>
             <Home />
           </Route>
-        </Switch>
+          <Route path="/contato">
+            <Contact />
+          </Route>
+      </Switch>
     </Router>
   );
 }
