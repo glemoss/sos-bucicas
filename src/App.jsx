@@ -5,7 +5,8 @@ import {
   Route,
 } from "react-router-dom";
 
-import { Contact, Home } from './pages'
+
+import { Contact, Home, Servicos } from './pages'
 
 
 export default function App() {
@@ -18,7 +19,10 @@ export default function App() {
           <Route path="/contato">
             <Contact />
           </Route>
-      </Switch>
+          <Route path="/servicos">
+            <Servicos />
+          </Route>
+       </Switch>
     </Router>
   );
 }

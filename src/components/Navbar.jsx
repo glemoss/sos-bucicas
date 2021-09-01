@@ -41,7 +41,7 @@ const Navbar = () => {
           } md:flex items-center gap-2`}
         >
           <NavLink href="animais" value="Animais" />
-          <NavLink href="doacoes" value="Doações" />
+          <NavLink href="/servicos" value="Doações" />
           <NavLink href="contato" value="Contato" />
         </div>
       </div>
