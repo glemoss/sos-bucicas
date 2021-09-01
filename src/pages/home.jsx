@@ -1,4 +1,4 @@
-import { Hero, Navbar, About, Gallery, News, Socials } from '../components'
+import { Hero, Navbar, About, Gallery, News, Socials, Footer } from '../components'
 
 export default function Home() {
   return (
@@ -22,6 +22,7 @@ export default function Home() {
     </div>
 
     <Socials />
+    <Footer />
     </main>
   )
 }
