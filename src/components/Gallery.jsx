@@ -7,7 +7,8 @@ export default function Gallery() {
       <div className="flex flex-wrap justify-around gap-4">
           {Array(6).fill(0).map((_, i) => (
             <div
-            className="bg-yellow-400 rounded-md"
+              key={i}
+              className="bg-yellow-400 rounded-md"
               style={{
                 height:"150px",
                 width:"150px",
