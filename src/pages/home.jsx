@@ -1,4 +1,4 @@
-import { Hero, Navbar, About, Gallery, News } from '../components'
+import { Hero, Navbar, About, Gallery, News, Socials } from '../components'
 
 export default function Home() {
   return (
@@ -7,7 +7,7 @@ export default function Home() {
       <Hero />
 
     <div
-      className="lg:container mx-auto flex flex-col items-center gap-16"
+      className="md:container mx-auto flex flex-col items-center gap-16 mb-16"
       style={{maxWidth: "95%"}}>
       <div className="grid sm:grid-cols-8 grid-flow-row">
         <div className="sm:col-span-6 p-4">
@@ -18,10 +18,10 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
-        <News />
-      </div>
+      <News />
     </div>
+
+    <Socials />
     </main>
   )
 }
