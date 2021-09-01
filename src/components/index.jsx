@@ -5,5 +5,5 @@ export { default as Gallery } from './Gallery'
 export { default as News } from './News'
 export { default as Socials } from './Socials'
 export { default as Footer } from './Footer'
+export { default as Pet } from './Pet'
 export { default as Works } from './Works'
-
