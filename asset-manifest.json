@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sos-bucicas/static/css/main.dafb8d11.chunk.css",
-    "main.js": "/sos-bucicas/static/js/main.ba96eddb.chunk.js",
-    "main.js.map": "/sos-bucicas/static/js/main.ba96eddb.chunk.js.map",
+    "main.js": "/sos-bucicas/static/js/main.a90a1826.chunk.js",
+    "main.js.map": "/sos-bucicas/static/js/main.a90a1826.chunk.js.map",
     "runtime-main.js": "/sos-bucicas/static/js/runtime-main.3d7b84f9.js",
     "runtime-main.js.map": "/sos-bucicas/static/js/runtime-main.3d7b84f9.js.map",
     "static/js/2.e389f766.chunk.js": "/sos-bucicas/static/js/2.e389f766.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.3d7b84f9.js",
     "static/js/2.e389f766.chunk.js",
     "static/css/main.dafb8d11.chunk.css",
-    "static/js/main.ba96eddb.chunk.js"
+    "static/js/main.a90a1826.chunk.js"
   ]
 }
