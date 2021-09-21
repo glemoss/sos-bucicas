@@ -40,9 +40,8 @@ const Navbar = () => {
             openMenu ? "block" : "hidden"
           } md:flex items-center gap-2`}
         >
-          <NavLink href="animais" value="Animais" />
-          <NavLink href="/servicos" value="Doações" />
-          <NavLink href="contato" value="Contato" />
+          <NavLink href="#/servicos" value="Doações" />
+          <NavLink href="#/contato" value="Contato" />
         </div>
       </div>
     </header>
