@@ -28,7 +28,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               type="button"
-              onClick={() => openMenuSet(!openMenu)}
+              onClick={openMenu => openMenuSet(!openMenu)}
               className="block hover:text-cool-gray-600 focus:text-cool-gray-600 outline-none w-6 h-6"
             >
               {openMenu ? <MdClose /> : <MdMenu />}
@@ -40,6 +40,7 @@ const Navbar = () => {
             openMenu ? "block" : "hidden"
           } md:flex items-center gap-2`}
         >
+          <NavLink href="#/animais" value="Animais" />
           <NavLink href="#/servicos" value="Doações" />
           <NavLink href="#/contato" value="Contato" />
         </div>
