@@ -9,6 +9,7 @@ import {
 import { Contact, Home, Servicos, Animals } from './pages'
 
 
+
 export default function App() {
   return (
     <Router>
