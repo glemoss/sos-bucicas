@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 
-import { Contact, Home, Servicos, Animals } from './pages'
+import { Cadastro, Contact, Home, Servicos, Animals } from './pages'
 
 
 
@@ -22,6 +22,9 @@ export default function App() {
           </Route>
           <Route path="/servicos">
             <Servicos />
+          </Route>
+          <Route path="/cadastro">
+            <Cadastro />
           </Route>
           <Route path="/animais">
             <Animals />
