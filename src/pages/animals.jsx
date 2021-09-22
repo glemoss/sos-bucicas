@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import axios from 'axios'
 import { Navbar, Footer } from '../components'
 
 export default function Animals() {
@@ -15,8 +15,18 @@ export default function Animals() {
   ])
 
   useEffect(() => {
+    axios.get(process.env.REACT_APP_SERVER_URL).then(({data: {animals}}) => {
+      animalsSet(animals)
+    })
+  },[])
 
-  })
+  async function animalDelete(e, id) {
+    e.preventDefault()
+    await axios.delete(`${process.env.REACT_APP_SERVER_URL}/${id}`)
+    animalsSet((animals)=> {
+      return animals.filter(animal => animal._id !== id)
+    })
+  }
 
   return (
     <main>
@@ -86,7 +96,7 @@ export default function Animals() {
       <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
     </td>
     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-      <a href="#" className="text-red-600 hover:text-red-900">Delete</a>
+      <a href="#" className="text-red-600 hover:text-red-900" onClick={(e) => animalDelete(e, animal._id)}>Delete</a>
     </td>
   </tr>
 
