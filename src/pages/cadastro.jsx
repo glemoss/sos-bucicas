@@ -1,6 +1,45 @@
+import { useState } from 'react'
+import axios from 'axios'
+
 import { Navbar, Footer } from '../components'
 
 export default function Cadastro() {
+  const [name, nameSet] = useState("")
+  const [species, speciesSet] = useState("")
+  const [status, statusSet] = useState("")
+  const [location, locationSet] = useState("")
+  const [foundAt, foundAtSet] = useState(new Date())
+  const [errors, errorsSet] = useState({
+    name: false,
+    species: false,
+    status: false,
+    location: false,
+    foundAt: false
+  })
+
+  function validateForm() {
+    errorsSet({
+      name: !!name,
+      species: !!species,
+      status: !!status,
+      location: !!location,
+      foundAt: !!foundAt
+    })
+
+    return Object.values(errors).every(e => e)
+  }
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+
+    if (!validateForm()) return
+
+    await axios.post(
+      process.env.REACT_APP_SERVER_URL,
+      {name,species,status,location,foundAt}
+    )
+  }
+
   return (
     <main>
       <Navbar />
@@ -8,36 +47,44 @@ export default function Cadastro() {
         <form className="flex flex-col items-center w-96 mx-auto gap-4">
           <div className="flex flex-col w-full gap-2">
             <label className="block text-gray-700 text-sm font-bold mb-2"
-              for="name">
+              htmlFor="name">
               Name
             </label>
             <input
               type="text"
               name="name"
+              required
+              value={name}
+              onChange={e => nameSet(e.target.value)}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
           </div>
           <div className="flex flex-col w-full gap-2">
             <label className="block text-gray-700 text-sm font-bold mb-2"
-              for="animal">
+              htmlFor="animal">
               Espécie
               do animal</label>
             <select
               name="animal"
               required
+              value={species}
+              onChange={e => speciesSet(e.target.value)}
               className="block w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-              <option value="" selected disabled hidden>Selecione</option>
+              <option value="" disabled hidden>Selecione</option>
               <option value="gato">Gato</option>
               <option value="cachorro">Cachorro</option>
             </select>
           </div>
           <div className="flex flex-col w-full gap-2">
             <label className="block text-gray-700 text-sm font-bold mb-2"
-              for="status">
+              htmlFor="status">
               Status
             </label>
             <select name="status" required
-              className="block w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
-              <option value="" selected disabled hidden>Selecione</option>
+              className="block w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              value={status}
+              onChange={e => statusSet(e.target.value)}
+            >
+              <option value="" disabled hidden>Selecione</option>
               <option value="perdido">Perdido</option>
               <option value="resgatado">Resgatado</option>
               <option value="adotado">Adotado</option>
@@ -45,20 +92,27 @@ export default function Cadastro() {
           </div>
           <div className="flex flex-col w-full gap-2">
             <label className="block text-gray-700 text-sm font-bold mb-2"
-              for="region">
+              htmlFor="location">
               Região
             </label>
-            <input type="text" name="region" required
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"/>
+            <input
+              type="text"
+              name="location"
+              value={location}
+              onChange={e => locationSet(e.target.value)}
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            />
           </div>
           <div className="flex flex-col w-full gap-2">
             <label className="block text-gray-700 text-sm font-bold mb-2"
-              for="found">
+              htmlFor="found">
               Achado em
             </label>
             <input
               type="date"
               name="found"
+              value={foundAt}
+              onChange={e => foundAtSet(e.target.value)}
               className="block w-full bg-white border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
             />
           </div>
@@ -66,6 +120,7 @@ export default function Cadastro() {
             <button
               className="font-bold curor-pointer bg-yellow-500 text-white py-2 px-4 hover:bg-yellow-400 rounded focus:outline-none focus:shadow-outline"
               type="submit"
+              onClick={e => handleSubmit(e)}
             >
               Enviar
             </button>
