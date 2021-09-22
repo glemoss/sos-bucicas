@@ -3,7 +3,7 @@ import { MdClose, MdMenu } from "react-icons/md";
 
 const NavLink = ({href, value}) => (
   <a href={href}>
-    <span className="mt-2 sm:mt-0 hover:bg-primary hover:text-white px-2 py-1 rounded cursor-pointer block">
+    <span className="mt-2 sm:mt-0 hover:bg-primary hover:shadow-md px-2 py-1 rounded cursor-pointer block">
       {value}
     </span>
   </a>
@@ -40,6 +40,7 @@ const Navbar = () => {
             openMenu ? "block" : "hidden"
           } md:flex items-center gap-2`}
         >
+          <NavLink href="#/cadastro" value="Cadastrar animal" />
           <NavLink href="#/servicos" value="Doações" />
           <NavLink href="#/contato" value="Contato" />
         </div>
