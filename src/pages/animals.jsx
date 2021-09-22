@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-
+import axios from 'axios'
 import { Navbar, Footer } from '../components'
 
 export default function Animals() {
@@ -15,8 +15,10 @@ export default function Animals() {
   ])
 
   useEffect(() => {
-
-  })
+    axios.get(process.env.REACT_APP_SERVER_URL).then(({data: {animals}}) => {
+      animalsSet(animals)
+    })
+  },[])
 
   return (
     <main>

@@ -43,7 +43,7 @@ export default function Cadastro() {
       process.env.REACT_APP_SERVER_URL,
       {name,species,status,location,foundAt}
     )
-    return history.push("/animals")
+    return history.push("/animais")
   }
 
   return (
