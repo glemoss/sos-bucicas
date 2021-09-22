@@ -40,9 +40,9 @@ export default function Animals() {
                 <thead className="bg-gray-50">
                   <tr>
                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                      Nome
-                    </th>
-                    <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+    Nome
+  </th>
+  <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
     Encontrado em
   </th>
   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -53,9 +53,6 @@ export default function Animals() {
   </th>
   <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
     Espécie
-  </th>
-  <th scope="col" className="relative px-6 py-3">
-    <span className="sr-only">Edit</span>
   </th>
   <th scope="col" className="relative px-6 py-3">
     <span className="sr-only">Delete</span>
@@ -79,9 +76,9 @@ export default function Animals() {
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full
-                 ${animal.status === 'adotado' && "bg-green-100 text-green-800"}
-                 ${animal.status === 'perdido' && "bg-red-100 text-red-800"}
-                 ${animal.status === 'resgatado' && "bg-yellow-100 text-yellow-800"}
+                  ${animal.status === 'adotado' && "bg-green-100 text-green-800"}
+                  ${animal.status === 'perdido' && "bg-red-100 text-red-800"}
+                  ${animal.status === 'resgatado' && "bg-yellow-100 text-yellow-800"}
                   `}>
       {animal.status}
     </span>
@@ -89,20 +86,17 @@ export default function Animals() {
   <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
       {animal.location}
     </td>
-  <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+    <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
       {animal.species}
     </td>
     <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-      <a href="#" className="text-indigo-600 hover:text-indigo-900">Edit</a>
-    </td>
-    <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-      <a href="#" className="text-red-600 hover:text-red-900" onClick={(e) => animalDelete(e, animal._id)}>Delete</a>
+      <a className="text-red-600 hover:text-red-900" onClick={(e) => animalDelete(e, animal._id)}>Delete</a>
     </td>
   </tr>
 
     ))}
-          </tbody>
-        </table>
+  </tbody>
+</table>
       </div>
     </div>
   </div>
